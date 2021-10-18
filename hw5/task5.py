@@ -13,6 +13,6 @@ def uniques_in_order_adv(iterable):
 
 if __name__ == '__main__':
     print('Вариант 1:')
-    print([item for item in uniques_inb_order(src)])
+    print([item for item in uniques_in_order(src)])
     print('Вариант 2:')
-    print([item for item in uniques_inb_order_adv(src)])
+    print([item for item in uniques_in_order_adv(src)])
