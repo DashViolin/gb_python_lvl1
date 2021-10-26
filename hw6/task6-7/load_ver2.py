@@ -7,14 +7,13 @@ def load_values(start=1, stop=None, raw_print=False):
     line_length = get_line_length()
     if not 1 <= start <= upper_bound:
         start = 1
-    if not stop or stop > upper_bound:
+    if not stop or not 1 <= stop <= upper_bound:
         stop = upper_bound
     if start > stop:
         start, stop = stop, start
     with open(file_name, encoding='utf8') as file:
-        start_byte = (start - 1) * line_length
+        current_byte = (start - 1) * line_length
         stop_byte = (stop - 1) * line_length
-        current_byte = start_byte
         result = []
         file.seek(current_byte)
         while current_byte <= stop_byte:
