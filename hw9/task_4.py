@@ -27,6 +27,15 @@ class Car:
         print('Текущая скорость:', self.speed)
 
 
+class SportCar(Car):
+    pass
+
+
+class PoliceCar(Car):
+    def __init__(self, speed: int, color: str, name: str, is_police=True):
+        super().__init__(speed, color, name, is_police)
+
+
 class TownCar(Car):
     def show_speed(self):
         message = f'{self.speed}' if self.speed <= 60 else f'{self.speed} (Внимание! Скорость превышена.)'
@@ -39,13 +48,17 @@ class WorkCar(Car):
         print('Текущая скорость:', message)
 
 
-police_car = Car(name='Ford Focus', color='белый', speed=100, is_police=True)
-print(police_car)
-police_car.show_speed()
-print()
 some_car = Car(name='Kia Rio', color='черный', speed=70)
 print(some_car)
 some_car.show_speed()
+print()
+police_car = PoliceCar(name='Ford Focus', color='белый', speed=100)
+print(police_car)
+police_car.show_speed()
+print()
+sport_car = SportCar(name='Nissan GT-R', color='бирюзовый', speed=170)
+print(sport_car)
+sport_car.show_speed()
 print()
 working_car = WorkCar(name='Kamaz', color='оранжевый', speed=50)
 print(working_car)
